@@ -144,7 +144,7 @@ h2::after {
   border-radius: 2px;
 }
 
-/* --- Contacto Profesional --- */
+/* --- Contacto --- */
 #contact {
   text-align: center;
 }
@@ -202,52 +202,46 @@ h2::after {
   font-size: 0.95rem;
 }
 
-/* --- Grid de Proyectos --- */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-}
-
-.card {
-  background: var(--card);
-  padding: 30px;
-  border-radius: 20px;
-  border: 1px solid rgba(148, 163, 184, 0.1);
-}
-
-/* --- AJUSTES MÓVIL (Media Queries) --- */
+/* --- AJUSTES MÓVIL (FUERZA BRUTA CON IMPORTANT) --- */
 @media (max-width: 768px) {
   nav {
-    padding: 0 5%;
-    flex-direction: column;
-    height: auto;
-    padding-bottom: 15px;
-    padding-top: 10px;
+    padding: 10px 5% !important;
+    flex-direction: column !important;
+    height: auto !important;
+    gap: 10px !important;
   }
 
   .nav-links {
-    margin-top: 10px;
-    gap: 15px;
-    flex-wrap: wrap;
-    justify-content: center;
+    margin-top: 5px !important;
+    gap: 15px !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
   }
 
   .nav-links a {
-    font-size: 0.9rem;
+    font-size: 0.85rem !important;
+  }
+
+  #hero h1 {
+    font-size: 2rem !important;
   }
 
   section {
-    padding: 60px 5%;
+    padding: 50px 5% !important;
   }
 
   h2 {
-    margin-bottom: 30px;
+    font-size: 1.8rem !important;
+    margin-bottom: 30px !important;
   }
 
   .contact-grid {
-    grid-template-columns: 1fr;
-    max-width: 400px;
-    margin: 0 auto;
+    grid-template-columns: 1fr !important;
+    max-width: 100% !important;
+    gap: 15px !important;
+  }
+
+  .contact-card {
+    padding: 25px 15px !important;
   }
 }
