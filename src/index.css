@@ -160,3 +160,18 @@ h2 { font-size: 2rem; text-align: center; margin-bottom: 40px; }
     width: 100% !important;
   }
 }
+
+/* Ajuste final para evitar que el logo se rompa */
+@media (max-width: 600px) {
+  .nav-logo {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    font-size: 1rem !important;
+  }
+  
+  /* Reducimos un poco más el espacio entre links para que no se amontonen */
+  .nav-links {
+    gap: 8px !important;
+  }
+}
