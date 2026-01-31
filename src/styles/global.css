@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background-color: #0f172a; /* azul oscuro profesional */
+  color: #e2e8f0; /* gris claro para leer fácil */
+  line-height: 1.6;
+  font-family: 'Inter', 'Segoe UI', sans-serif; /* tipografía moderna */
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+  color: #f8fafc; /* blanco ligeramente cálido */
+}
+
+p {
+  color: #cbd5e1; /* gris medio para párrafos */
+}
+
+
+a {
+  color: #38bdf8;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+html {
+  scroll-behavior: smooth;
+}
