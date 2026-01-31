@@ -211,3 +211,50 @@ section {
   font-size: 0.95rem;
   font-weight: 400;
 }
+
+/* --- AJUSTES PARA MÓVIL Y TABLET --- */
+@media (max-width: 768px) {
+  /* Reducimos el tamaño del título principal para que no se corte */
+  #hero h1 {
+    font-size: 2.2rem !important; 
+    padding: 0 10px;
+  }
+
+  #hero p {
+    font-size: 1rem;
+    padding: 0 5%;
+  }
+
+  /* Reducimos los títulos de las secciones */
+  h2 {
+    font-size: 2rem !important;
+    margin-bottom: 30px;
+  }
+
+  /* Ajustamos el espaciado de las secciones para que no haya tanto hueco */
+  section {
+    padding: 60px 5% !important;
+  }
+
+  /* Las tarjetas de contacto ocuparán casi todo el ancho */
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+    gap: 15px;
+    padding: 0 10px;
+  }
+
+  .contact-card {
+    padding: 25px 15px !important;
+  }
+}
+
+/* Ajuste extra para móviles muy pequeños (iPhone SE, etc.) */
+@media (max-width: 480px) {
+  #hero h1 {
+    font-size: 1.8rem !important;
+  }
+  
+  .nav-logo {
+    font-size: 1.2rem;
+  }
+}
