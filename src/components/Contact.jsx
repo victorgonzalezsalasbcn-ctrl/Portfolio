@@ -19,7 +19,7 @@ function Contact() {
     { 
       name: "LinkedIn", 
       value: "Víctor González Salas", 
-      link: "https://www.linkedin.com/in/v%C3%ADctor-gonz%C3%A1lez-salas-07a941163/", 
+      link: "https://www.linkedin.com/in/víctor-gonzález-salas-07a941163/", 
       icon: <Linkedin size={32} /> 
     }
   ];
