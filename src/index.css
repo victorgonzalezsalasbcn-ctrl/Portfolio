@@ -78,6 +78,38 @@ nav {
   font-size: 0.9rem;
 }
 
+/* --- THEME TOGGLE (ESTILO PRO) --- */
+.theme-toggle {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  color: var(--accent);
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-left: 10px;
+}
+
+.theme-toggle:hover {
+  background: rgba(6, 182, 212, 0.1);
+  border-color: var(--accent);
+  transform: translateY(-2px) rotate(15deg);
+  box-shadow: 0 0 15px rgba(6, 182, 212, 0.2);
+}
+
+.theme-toggle svg {
+  animation: scaleIn 0.3s ease-out;
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.5); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
 /* --- HERO --- */
 #hero {
   height: calc(100vh - 80px);
@@ -96,14 +128,14 @@ nav {
   padding: 100px 5%; 
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centra las cajas horizontalmente */
-  text-align: center;   /* Centra títulos y textos sueltos */
+  align-items: center; 
+  text-align: center; 
 }
 
 h2 { 
   font-size: 2.5rem; 
   text-align: center; 
-  margin-bottom: 60px; /* Más espacio bajo el título */
+  margin-bottom: 60px; 
 }
 
 .contact-subtitle {
@@ -116,7 +148,7 @@ h2 {
 .contact-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 40px; /* Mucho más espacio entre las cajas */
+  gap: 40px; 
   width: 100%;
   max-width: 1100px;
   margin: 0 auto;
@@ -124,7 +156,7 @@ h2 {
 
 .contact-card {
   background: var(--card);
-  padding: 50px 30px; /* Más aire dentro de cada caja */
+  padding: 50px 30px; 
   border-radius: 24px;
   text-decoration: none;
   border: 1px solid rgba(148, 163, 184, 0.1);
@@ -132,7 +164,7 @@ h2 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center; /* Centra el texto plano dentro de la caja */
+  text-align: center; 
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -144,7 +176,7 @@ h2 {
 
 .contact-icon-wrapper {
   color: var(--accent);
-  margin-bottom: 20px; /* Más separación bajo el icono */
+  margin-bottom: 20px; 
   background: rgba(6, 182, 212, 0.1);
   padding: 15px;
   border-radius: 50%;
@@ -161,10 +193,10 @@ h2 {
 .contact-card p {
   font-size: 1rem;
   opacity: 0.8;
-  word-break: break-all; /* Evita que el email rompa la caja en móviles */
+  word-break: break-all; 
 }
 
-/* --- AJUSTES MÓVIL CRÍTICOS --- */
+/* --- AJUSTES MÓVIL --- */
 @media (max-width: 600px) {
   nav {
     height: auto !important;
@@ -188,34 +220,17 @@ h2 {
     font-size: 1.1rem !important;
     width: 100% !important;
     text-align: center !important;
+    display: flex !important;
+    justify-content: center !important;
   }
 
   .contact-grid {
     grid-template-columns: 1fr !important;
     padding: 0 10px !important;
   }
-
-  .contact-card {
-    width: 100% !important;
-  }
 }
 
-/* Ajuste final para evitar que el logo se rompa */
-@media (max-width: 600px) {
-  .nav-logo {
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    font-size: 1rem !important;
-  }
-  
-  /* Reducimos un poco más el espacio entre links para que no se amontonen */
-  .nav-links {
-    gap: 8px !important;
-  }
-}
-
-/* --- HERO SECTION --- */
+/* --- HERO SECTION (FOTO Y EFECTOS) --- */
 #hero {
   display: flex;
   flex-direction: column;
@@ -234,7 +249,6 @@ h2 {
   align-items: center;
 }
 
-/* Efecto de resplandor profesional detrás de la foto */
 .profile-container::before {
   content: '';
   position: absolute;
@@ -254,13 +268,12 @@ h2 {
   height: 180px !important;
   border-radius: 50% !important;
   object-fit: cover;
-  /* Borde con gradiente suave usando padding y background */
   padding: 4px;
   background: linear-gradient(135deg, var(--accent) 0%, #6366f1 100%);
   border: none !important; 
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
   transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  filter: grayscale(20%); /* Toque elegante */
+  filter: grayscale(20%);
 }
 
 .profile-img:hover {
@@ -269,13 +282,12 @@ h2 {
   box-shadow: 0 15px 50px rgba(6, 182, 212, 0.3);
 }
 
-/* Animación sutil de pulso para el brillo */
 @keyframes pulse-glow {
   from { transform: scale(0.95); opacity: 0.3; }
   to { transform: scale(1.05); opacity: 0.6; }
 }
 
-/* --- RESPONSIVE --- */
+/* --- RESPONSIVE FINAL --- */
 @media (max-width: 768px) {
   .profile-img {
     width: 150px !important;

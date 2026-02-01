@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { ThemeContext } from "../context/ThemeContext.jsx";
+import { Sun, Moon } from "lucide-react"; 
 
 function Navbar() {
   const { theme, toggleTheme } = useContext(ThemeContext);
@@ -21,8 +22,18 @@ function Navbar() {
         {links.map(link => (
           <a key={link.id} href={`#${link.id}`}>{link.name}</a>
         ))}
-        <button className="theme-toggle" onClick={toggleTheme}>
-          {theme === "dark" ? "☀️" : "🌙"}
+        
+        {/* Botón actualizado con iconos vectoriales */}
+        <button 
+          className="theme-toggle" 
+          onClick={toggleTheme}
+          aria-label="Cambiar tema"
+        >
+          {theme === "dark" ? (
+            <Sun size={20} strokeWidth={2.5} />
+          ) : (
+            <Moon size={20} strokeWidth={2.5} />
+          )}
         </button>
       </div>
     </nav>
