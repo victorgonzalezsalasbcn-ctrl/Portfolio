@@ -21,7 +21,7 @@ function Hero() {
       {/* La foto aparece primero en el orden del código */}
       <div className="profile-container">
         <img 
-          src="/mifoto.jpg" 
+          src="/mifoto.png" 
           alt="Víctor González Salas" 
           className="profile-img" 
         />
