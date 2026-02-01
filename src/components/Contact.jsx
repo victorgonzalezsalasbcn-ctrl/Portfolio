@@ -6,20 +6,20 @@ function Contact() {
   const contactMethods = [
     { 
       name: "Email", 
-      value: "tuemail@ejemplo.com", 
-      link: "mailto:tuemail@ejemplo.com", 
+      value: "victor.gonzalezsalas.bcn@gmail.com", 
+      link: "mailto:victor.gonzalezsalas.bcn@gmail.com", 
       icon: <Mail size={32} /> 
     },
     { 
       name: "GitHub", 
-      value: "github.com/tuusuario", 
-      link: "https://github.com/tuusuario", 
+      value: "github.com/victorgonzalezsalas", 
+      link: "https://github.com/victorgonzalezsalasbcn-ctrl", 
       icon: <Github size={32} /> 
     },
     { 
       name: "LinkedIn", 
-      value: "linkedin.com/in/tuusuario", 
-      link: "https://linkedin.com/in/tuusuario", 
+      value: "Víctor González Salas", 
+      link: "https://www.linkedin.com/in/v%C3%ADctor-gonz%C3%A1lez-salas-07a941163/", 
       icon: <Linkedin size={32} /> 
     }
   ];
