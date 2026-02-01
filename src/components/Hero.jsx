@@ -18,6 +18,15 @@ function Hero() {
 
   return (
     <section id="hero">
+      {/* La foto aparece primero en el orden del código */}
+      <div className="profile-container">
+        <img 
+          src="/mifoto.jpg" 
+          alt="Víctor González Salas" 
+          className="profile-img" 
+        />
+      </div>
+      
       <h1>{displayText}<span className="cursor">|</span></h1>
       <p>Construyendo aplicaciones multimedia y web completas, del frontend al backend.</p>
     </section>
