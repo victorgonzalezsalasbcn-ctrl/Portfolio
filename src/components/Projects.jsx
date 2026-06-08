@@ -138,6 +138,7 @@ function Projects() {
                       width: "100%",
                       height: "100%",
                       objectFit: "cover",
+                      objectPosition: "top", // 🔥 SOLUCIÓN: recorte desde arriba
                     }}
                   />
                 </div>
@@ -171,22 +172,21 @@ function Projects() {
                   </p>
                 )}
 
+                {/* Lista mejorada */}
                 {project.details && (
                   <ul
                     style={{
-                      marginBottom: "14px",
-                      paddingLeft: "18px",
+                      marginBottom: "16px",
+                      paddingLeft: "0",
+                      listStylePosition: "inside",
+                      textAlign: "left",
                       opacity: 0.85,
+                      lineHeight: "1.45",
+                      fontSize: "0.9rem",
                     }}
                   >
                     {project.details.map((d, i) => (
-                      <li
-                        key={i}
-                        style={{
-                          fontSize: "0.85rem",
-                          marginBottom: "4px",
-                        }}
-                      >
+                      <li key={i} style={{ marginBottom: "6px" }}>
                         {d}
                       </li>
                     ))}
