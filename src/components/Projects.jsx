@@ -19,7 +19,13 @@ function Projects() {
   return (
     <motion.section
       id="projects"
-      style={{ padding: "120px 20px", minHeight: "80vh", textAlign: "center" }}
+      style={{
+        padding: "120px 40px",
+        minHeight: "80vh",
+        textAlign: "center",
+        maxWidth: "1200px",
+        margin: "0 auto",
+      }}
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -45,8 +51,7 @@ function Projects() {
           fontSize: "1rem",
         }}
       >
-        Una selección de proyectos que representan mi evolución como desarrollador,
-        combinando backend, frontend, mobile y bases de datos.
+        Una selección de proyectos que representan mi evolución como desarrollador.
       </p>
 
       {/* Filtros */}
@@ -88,8 +93,8 @@ function Projects() {
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-          gap: "24px",
+          gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))",
+          gap: "40px",
         }}
       >
         <AnimatePresence>
@@ -101,131 +106,159 @@ function Projects() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 30 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ scale: 1.05, boxShadow: "0 10px 20px rgba(0,0,0,0.3)" }}
+              whileHover={{
+                scale: 1.02,
+                boxShadow: "0 12px 28px rgba(0,0,0,0.25)",
+              }}
               style={{
                 backgroundColor: theme === "dark" ? "#1e293b" : "#ffffff",
                 color: theme === "dark" ? "#f1f5f9" : "#1e293b",
-                padding: "24px",
-                borderRadius: "14px",
+                borderRadius: "16px",
+                overflow: "hidden",
                 cursor: "pointer",
-                textAlign: "left",
+                display: "flex",
+                flexDirection: "column",
+                minHeight: "100%",
               }}
             >
-              <h3
-                style={{
-                  marginBottom: "10px",
-                  fontSize: "1.3rem",
-                  fontWeight: "600",
-                }}
-              >
-                {project.title}
-              </h3>
-
-              <p style={{ marginBottom: "10px", opacity: 0.9 }}>
-                {project.description}
-              </p>
-
-              {/* Impacto */}
-              {project.impact && (
-                <p
+              {/* Imagen */}
+              {project.image && (
+                <div
                   style={{
-                    marginBottom: "12px",
-                    fontStyle: "italic",
-                    opacity: 0.8,
+                    width: "100%",
+                    height: "220px",
+                    overflow: "hidden",
+                    backgroundColor: "#000",
                   }}
                 >
-                  {project.impact}
-                </p>
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                    }}
+                  />
+                </div>
               )}
 
-              {/* Detalles técnicos */}
-              {project.details && (
-                <ul
+              {/* Contenido */}
+              <div style={{ padding: "22px", flexGrow: 1 }}>
+                <h3
                   style={{
-                    marginBottom: "12px",
-                    paddingLeft: "18px",
-                    opacity: 0.85,
+                    marginBottom: "10px",
+                    fontSize: "1.4rem",
+                    fontWeight: "600",
                   }}
                 >
-                  {project.details.map((d, i) => (
-                    <li
+                  {project.title}
+                </h3>
+
+                <p style={{ marginBottom: "10px", opacity: 0.9 }}>
+                  {project.description}
+                </p>
+
+                {project.impact && (
+                  <p
+                    style={{
+                      marginBottom: "12px",
+                      fontStyle: "italic",
+                      opacity: 0.8,
+                    }}
+                  >
+                    {project.impact}
+                  </p>
+                )}
+
+                {project.details && (
+                  <ul
+                    style={{
+                      marginBottom: "14px",
+                      paddingLeft: "18px",
+                      opacity: 0.85,
+                    }}
+                  >
+                    {project.details.map((d, i) => (
+                      <li
+                        key={i}
+                        style={{
+                          fontSize: "0.85rem",
+                          marginBottom: "4px",
+                        }}
+                      >
+                        {d}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+
+                {/* Tecnologías */}
+                <div
+                  style={{
+                    display: "flex",
+                    flexWrap: "wrap",
+                    gap: "6px",
+                    marginBottom: "16px",
+                  }}
+                >
+                  {project.technologies.map((tech, i) => (
+                    <span
                       key={i}
                       style={{
-                        fontSize: "0.85rem",
-                        marginBottom: "4px",
+                        backgroundColor: theme === "dark" ? "#0f172a" : "#e2e8f0",
+                        padding: "4px 8px",
+                        borderRadius: "6px",
+                        fontSize: "0.8rem",
+                        border: "1px solid #38bdf8",
+                        color: "#38bdf8",
                       }}
                     >
-                      {d}
-                    </li>
+                      {tech}
+                    </span>
                   ))}
-                </ul>
-              )}
+                </div>
 
-              {/* Tecnologías */}
-              <div
-                style={{
-                  display: "flex",
-                  flexWrap: "wrap",
-                  gap: "6px",
-                  marginBottom: "14px",
-                }}
-              >
-                {project.technologies.map((tech, i) => (
-                  <span
-                    key={i}
-                    style={{
-                      backgroundColor: theme === "dark" ? "#0f172a" : "#e2e8f0",
-                      padding: "4px 8px",
-                      borderRadius: "6px",
-                      fontSize: "0.8rem",
-                      border: "1px solid #38bdf8",
-                      color: "#38bdf8",
-                    }}
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-
-              {/* Botones */}
-              <div style={{ display: "flex", gap: "10px" }}>
-                {project.github && (
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{
-                      color: "#38bdf8",
-                      border: "1px solid #38bdf8",
-                      padding: "6px 12px",
-                      borderRadius: "6px",
-                      fontSize: "0.85rem",
-                      textDecoration: "none",
-                      transition: "all 0.3s",
-                    }}
-                  >
-                    GitHub
-                  </a>
-                )}
-                {project.demo && (
-                  <a
-                    href={project.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{
-                      color: theme === "dark" ? "#0f172a" : "#ffffff",
-                      backgroundColor: theme === "dark" ? "#38bdf8" : "#2563eb",
-                      padding: "6px 12px",
-                      borderRadius: "6px",
-                      fontSize: "0.85rem",
-                      fontWeight: "bold",
-                      textDecoration: "none",
-                      transition: "all 0.3s",
-                    }}
-                  >
-                    Demo
-                  </a>
-                )}
+                {/* Botones */}
+                <div style={{ display: "flex", gap: "10px" }}>
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{
+                        color: "#38bdf8",
+                        border: "1px solid #38bdf8",
+                        padding: "6px 12px",
+                        borderRadius: "6px",
+                        fontSize: "0.85rem",
+                        textDecoration: "none",
+                        transition: "all 0.3s",
+                      }}
+                    >
+                      GitHub
+                    </a>
+                  )}
+                  {project.demo && (
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{
+                        color: theme === "dark" ? "#0f172a" : "#ffffff",
+                        backgroundColor: theme === "dark" ? "#38bdf8" : "#2563eb",
+                        padding: "6px 12px",
+                        borderRadius: "6px",
+                        fontSize: "0.85rem",
+                        fontWeight: "bold",
+                        textDecoration: "none",
+                        transition: "all 0.3s",
+                      }}
+                    >
+                      Demo
+                    </a>
+                  )}
+                </div>
               </div>
             </motion.div>
           ))}
