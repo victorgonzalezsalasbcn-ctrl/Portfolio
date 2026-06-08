@@ -19,7 +19,7 @@ const projects = [
       "GitHub"
     ],
     category: "TFG",
-    github: "https://github.com/victorgonzalesalasbcn-ctrl/SmartCut",
+    github: "https://github.com/victorgonzalezsalasbcn-ctrl/SmartCut",
   },
 
   {
@@ -27,8 +27,8 @@ const projects = [
     description: "Portfolio personal desarrollado con React, Framer Motion y Vite para mostrar mis proyectos y habilidades como desarrollador.",
     technologies: ["React", "Framer Motion", "Vite"],
     category: "Personal",
-    github: "https://github.com/tuusuario/portfolio",
-    demo: "https://tuportfolio.com"
+    github: "https://github.com/victorgonzalezsalasbcn-ctrl/Portfolio",
+    demo: "https://portfolio-git-main-victor-gonzalez-salas-projects.vercel.app/#projects"
   }
 ];
 
