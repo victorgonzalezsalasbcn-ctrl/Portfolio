@@ -23,12 +23,9 @@ function About() {
         whileInView={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.2 }}
       >
-        Desarrollador de aplicaciones multiplataforma con ilusión por crear soluciones reales en el sector. 
-        Con una amplia experiencia en el mundo IT, he estado en resolución de incidencias técnicas, coordinación de equipos y desarrollo de software.
-        Apasionado de las tecnologías, trabajé adicionalmente con herramientas de training para IA generativa y ahora quiero enfocarme en el desarrollo de aplicaciones a nivel profesional.
+        Desarrollador de aplicaciones multiplataforma con una trayectoria sólida en el sector IT. Durante años he trabajado en soporte técnico, resolución de incidencias, coordinación de equipos y mejora de procesos, lo que me ha dado una visión completa del ciclo de vida de un servicio tecnológico. También he participado en tareas de calidad, documentación y entrenamiento de modelos de IA generativa, siempre orientado a optimizar el trabajo de los equipos.
         <br /><br />
-        Mis habilidades incluyen JavaScript, React, Node.js, bases de datos SQL y NoSQL, así como conocimientos en DevOps y metodologías ágiles. 
-        Estoy comprometido con el aprendizaje continuo y la mejora constante para ofrecer soluciones innovadoras y eficientes.
+        Actualmente estoy enfocado en el desarrollo de software, especialmente en la creación de aplicaciones reales que aporten valor. Trabajo con JavaScript, React, Node.js y bases de datos SQL y NoSQL, y complemento mi perfil con conocimientos en DevOps, automatización y metodologías ágiles. Me motiva seguir creciendo como desarrollador y construir soluciones eficientes, escalables y bien diseñadas.
       </motion.p>
     </motion.section>
   );
