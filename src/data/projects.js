@@ -30,6 +30,7 @@ const projects = [
       "Logcat",
       "Thunder Client"
     ],
+    image: "/smartcut.png",
     category: "TFG",
     github: "https://github.com/victorgonzalezsalasbcn-ctrl/SmartCut"
   },
@@ -48,6 +49,7 @@ const projects = [
       "Estructura modular y mantenible."
     ],
     technologies: ["React", "Framer Motion", "Vite"],
+    image: "/portfolio.png",
     category: "Personal",
     github: "https://github.com/victorgonzalezsalasbcn-ctrl/Portfolio",
     demo: "https://portfolio-git-main-victor-gonzalez-salas-projects.vercel.app/#projects"
