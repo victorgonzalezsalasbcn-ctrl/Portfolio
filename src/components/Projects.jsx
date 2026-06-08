@@ -25,9 +25,29 @@ function Projects() {
       viewport={{ once: true }}
       transition={{ duration: 0.8 }}
     >
-      <h2 style={{ marginBottom: "30px", color: theme === "dark" ? "#f1f5f9" : "#1e293b" }}>
+      <h2
+        style={{
+          marginBottom: "10px",
+          color: theme === "dark" ? "#f1f5f9" : "#1e293b",
+          fontSize: "2.2rem",
+          fontWeight: "700",
+        }}
+      >
         Proyectos
       </h2>
+
+      <p
+        style={{
+          opacity: 0.7,
+          marginBottom: "40px",
+          maxWidth: "700px",
+          marginInline: "auto",
+          fontSize: "1rem",
+        }}
+      >
+        Una selección de proyectos que representan mi evolución como desarrollador,
+        combinando backend, frontend, mobile y bases de datos.
+      </p>
 
       {/* Filtros */}
       <div
@@ -68,8 +88,8 @@ function Projects() {
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-          gap: "20px",
+          gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+          gap: "24px",
         }}
       >
         <AnimatePresence>
@@ -85,16 +105,71 @@ function Projects() {
               style={{
                 backgroundColor: theme === "dark" ? "#1e293b" : "#ffffff",
                 color: theme === "dark" ? "#f1f5f9" : "#1e293b",
-                padding: "20px",
-                borderRadius: "12px",
+                padding: "24px",
+                borderRadius: "14px",
                 cursor: "pointer",
+                textAlign: "left",
               }}
             >
-              <h3 style={{ marginBottom: "10px" }}>{project.title}</h3>
-              <p style={{ marginBottom: "10px" }}>{project.description}</p>
+              <h3
+                style={{
+                  marginBottom: "10px",
+                  fontSize: "1.3rem",
+                  fontWeight: "600",
+                }}
+              >
+                {project.title}
+              </h3>
+
+              <p style={{ marginBottom: "10px", opacity: 0.9 }}>
+                {project.description}
+              </p>
+
+              {/* Impacto */}
+              {project.impact && (
+                <p
+                  style={{
+                    marginBottom: "12px",
+                    fontStyle: "italic",
+                    opacity: 0.8,
+                  }}
+                >
+                  {project.impact}
+                </p>
+              )}
+
+              {/* Detalles técnicos */}
+              {project.details && (
+                <ul
+                  style={{
+                    marginBottom: "12px",
+                    paddingLeft: "18px",
+                    opacity: 0.85,
+                  }}
+                >
+                  {project.details.map((d, i) => (
+                    <li
+                      key={i}
+                      style={{
+                        fontSize: "0.85rem",
+                        marginBottom: "4px",
+                      }}
+                    >
+                      {d}
+                    </li>
+                  ))}
+                </ul>
+              )}
 
               {/* Tecnologías */}
-              <div style={{ display: "flex", flexWrap: "wrap", gap: "6px", marginBottom: "10px" }}>
+              <div
+                style={{
+                  display: "flex",
+                  flexWrap: "wrap",
+                  gap: "6px",
+                  marginBottom: "14px",
+                }}
+              >
                 {project.technologies.map((tech, i) => (
                   <span
                     key={i}
@@ -113,7 +188,7 @@ function Projects() {
               </div>
 
               {/* Botones */}
-              <div style={{ display: "flex", gap: "10px", justifyContent: "center" }}>
+              <div style={{ display: "flex", gap: "10px" }}>
                 {project.github && (
                   <a
                     href={project.github}
@@ -128,10 +203,6 @@ function Projects() {
                       textDecoration: "none",
                       transition: "all 0.3s",
                     }}
-                    onMouseEnter={(e) =>
-                      (e.currentTarget.style.boxShadow = "0 8px 25px rgba(56,189,248,0.5)")
-                    }
-                    onMouseLeave={(e) => (e.currentTarget.style.boxShadow = "none")}
                   >
                     GitHub
                   </a>
@@ -151,10 +222,6 @@ function Projects() {
                       textDecoration: "none",
                       transition: "all 0.3s",
                     }}
-                    onMouseEnter={(e) =>
-                      (e.currentTarget.style.boxShadow = "0 8px 25px rgba(56,189,248,0.5)")
-                    }
-                    onMouseLeave={(e) => (e.currentTarget.style.boxShadow = "none")}
                   >
                     Demo
                   </a>
